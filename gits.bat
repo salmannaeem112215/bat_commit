@@ -1,6 +1,6 @@
 @echo off
 setlocal EnableDelayedExpansion
-
+cd /d "C:\SALMAN\flutter\bat_commit"
 REM Example usage:
 call :print_date_range "2022-01-01" "2023-01-10"
 exit /b
