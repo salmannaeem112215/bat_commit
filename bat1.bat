@@ -1,8 +1,6 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-REM Set the date to March 17, 2022
-powershell -Command "(Get-Date '2022-03-17').ToLocalTime() | Set-Date"
 
 REM Example usage:
 call :print_date_range "2022-01-01" "2023-01-10"
@@ -14,7 +12,8 @@ set "end_date=%~2"
 
 :LOOP
 REM Set system date and time using PowerShell
-powershell -Command "(Get-Date '%start_date%').ToLocalTime()" | set /p=
+powershell -Command "(Get-Date '%start_date%').ToLocalTime() | Set-Date"
+
 REM Append current date to README.md
 echo %start_date% >> README.md
 
