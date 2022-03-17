@@ -1,6 +1,9 @@
 @echo off
 setlocal EnableDelayedExpansion
 
+REM Set the date to March 17, 2022
+powershell -Command "(Get-Date '2022-03-17').ToLocalTime() | Set-Date"
+
 REM Example usage:
 call :print_date_range "2022-01-01" "2023-01-10"
 exit /b
@@ -43,10 +46,10 @@ set /a "dd+=1"
 
 REM Adjust month and year if necessary
 if !dd! gtr 31 (
-    set "dd=1"
+    set "dd=01"
     set /a "mm+=1"
     if !mm! gtr 12 (
-        set "mm=1"
+        set "mm=01"
         set /a "yyyy+=1"
     )
 )
