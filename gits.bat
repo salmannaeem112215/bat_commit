@@ -2,7 +2,7 @@
 setlocal EnableDelayedExpansion
 cd /d "C:\SALMAN\flutter\bat_commit"
 REM Example usage:
-call :print_date_range "2023-01-01" "2024-03-20"
+call :print_date_range "2024-03-15" "2024-03-21"
 exit /b
 
 :print_date_range
@@ -49,9 +49,9 @@ for /l %%y in (!start_year!, 1, !end_year!) do (
 
 
 
-           for /l %%i in (1, 1, 1000) do (
+           for /l %%i in (1, 1, 100000) do (
                 REM Append current date to README.md
-                echo %current_date% >> README.md
+                echo 56 >> README.md
 
                 REM Commit changes to Git repository
                 git add .
