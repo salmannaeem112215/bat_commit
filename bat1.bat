@@ -35,7 +35,7 @@ set "date_str=%~1"
 
 REM Extract year, month, and day
 for /f "tokens=1-3 delims=-" %%a in ("%date_str%") do (
-    set /a "yyyy=%%a", "mm=%%b", "dd=%%c"
+    set /a "yyyy=%%a", "mm=100+%%b", "dd=100+%%c"
 )
 
 REM Increment day
