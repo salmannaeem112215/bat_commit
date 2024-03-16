@@ -10,9 +10,8 @@ set "start_date=%~1"
 set "end_date=%~2"
 
 :LOOP
-REM Set system date using PowerShell
-powershell -Command "(Get-Date '%start_date%').ToShortDateString()" | set /p=
-
+REM Set system date and time using PowerShell
+powershell -Command "(Get-Date '%start_date%').ToLocalTime()" | set /p=
 REM Append current date to README.md
 echo %start_date% >> README.md
 
@@ -54,4 +53,5 @@ if !dd! gtr 31 (
 
 REM Format date back to yyyy-mm-dd
 set "start_date=!yyyy!-!mm:~-2!-!dd:~-2!"
+
 exit /b
