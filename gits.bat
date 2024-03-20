@@ -47,12 +47,16 @@ for /l %%y in (!start_year!, 1, !end_year!) do (
             REM Set system date using PowerShell
             powershell -Command "(Get-Date '%%y-!mm!-!dd!').ToLocalTime() | Set-Date"
 
-            REM Append current date to README.md
-            echo %current_date% >> README.md
 
-            REM Commit changes to Git repository
-            git add .
-            git commit -m "Update README with date %%y-!mm!-!dd!"
+
+           for /l %%i in (1, 1, 1000) do (
+                REM Append current date to README.md
+                echo %current_date% >> README.md
+
+                REM Commit changes to Git repository
+                git add .
+                git commit -m "Update README with date %%y-!mm!-!dd!"
+           )
         )
     )
 )
