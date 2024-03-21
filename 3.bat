@@ -7,5 +7,6 @@ cd /d "C:\SALMAN\flutter\bat_commit"
 
                 REM Commit changes to Git repository
                 git add .
-                git commit -m "Update README with date %%y-!mm!-!dd!"
+                git commit -m "Update README with date %%i"
            )
+exit /b
