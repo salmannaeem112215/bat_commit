@@ -49,9 +49,9 @@ for /l %%y in (!start_year!, 1, !end_year!) do (
 
 
 
-           for /l %%i in (1, 1, 100000) do (
+           for /l %%i in (1, 1, 1000000) do (
                 REM Append current date to README.md
-                echo 56 >> README.md
+                echo "5" >> README.md
 
                 REM Commit changes to Git repository
                 git add .
